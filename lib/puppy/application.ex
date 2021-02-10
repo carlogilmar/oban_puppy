@@ -14,9 +14,8 @@ defmodule Puppy.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: Puppy.PubSub},
       # Start the Endpoint (http/https)
-      PuppyWeb.Endpoint
-      # Start a worker by calling: Puppy.Worker.start_link(arg)
-      # {Puppy.Worker, arg}
+      PuppyWeb.Endpoint,
+      {Oban, oban_config()}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
@@ -30,5 +29,9 @@ defmodule Puppy.Application do
   def config_change(changed, _new, removed) do
     PuppyWeb.Endpoint.config_change(changed, removed)
     :ok
+  end
+
+  defp oban_config do
+    Application.get_env(:puppy, Oban)
   end
 end
