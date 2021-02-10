@@ -23,4 +23,3 @@ config :logger, level: :warn
 
 # Oban Config for testing
 config :puppy, Oban, queues: false, plugins: false
-

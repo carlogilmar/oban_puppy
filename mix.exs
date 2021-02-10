@@ -45,7 +45,9 @@ defmodule Puppy.MixProject do
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:oban, "~> 2.4.3"}
+      {:oban, "~> 2.4.3"},
+      {:httpoison, "~> 1.8"},
+      {:poison, "~> 3.1"}
     ]
   end
 

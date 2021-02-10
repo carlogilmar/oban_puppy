@@ -10,5 +10,4 @@ defmodule Puppy.Repo.Migrations.AddObanJobsTable do
   def down do
     Oban.Migrations.down(version: 1)
   end
-
 end
